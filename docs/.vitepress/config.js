@@ -2,37 +2,37 @@ import autoGetSidebarOptionBySrcDir from "./sidebar";
 const path = require("path");
 
 module.exports = {
-  title: "谈畅的个人博客",
+  title: "liang14658fox",
   description: "Front end project and tips sharing",
+  dest: './dist',
   lang: "cn-ZH",
   base: "/",
+  markdown: {
+    lineNumbers: true
+  },//为所有代码启动行号
   themeConfig: {
-    siteTitle: "谈畅的个人博客",
+    siteTitle: "liang14658fox",
     logo: "/联合政府_画板 1.png",
-    //顶部
     nav: [
-      { text: "介绍", link: "/articles/basic/index" },
+      { text: "介绍", link: "/articles/other/00.介绍" },
       {
         text: "🔥 前端",
         items: [
-          { text: "CSS高级", link: "/articles/basic/index" },
-          { text: "JavaScript", link: "/articles/web3d/index" },
+          { text: "CSS高级", link: "/articles/css/00.目录" },
+          { text: "JavaScript", link: "/articles/JavaScript/对象" },
           { text: "Vue-Cli", link: "/articles/vue/00.什么是Vue" },
-          { text: "Element", link: "/articles/electron/index" },
-          // { text: "微信小程序", link: "/articles/mini/index" },
+          { text: "Element", link: "/articles/element/00.目录" },
           {
             items: [
-              { text: "TypeScript", link: "/articles/react/index" },
-              { text: "React", link: "/articles/react/index" },
-              { text: "VitePress", link: "/articles/other/vitepress/01.vitepress的搭建" },]
+              { text: "TypeScript", link: "/articles/typescript/00.什么是TypeScript" },
+              { text: "React", link: "/articles/react/00.什么是React" },
+              { text: "VitePress", link: "/articles/vitepress/01.vitepress的搭建" },]
           },
         ],
       },
       { text: "💭 开源项目", link: "/intent/" },
-      // { text: "算法", link: "/leetcode/LEET_CODE题解/47. 全排列 II" },
       {
         text: "更多", items: [
-          //使用items做分隔栏
           {
             items: [
               { text: "关于我", link: "/articles/basic/index" },
@@ -54,39 +54,44 @@ module.exports = {
     //侧边栏
     sidebar: {
       //跟原来不一样，这里写了一个函数来引入该文件夹下的所有文件并根据名称生成目录
-      "/articles/basic": autoGetSidebarOptionBySrcDir(
-        path.resolve(__dirname, "../articles/basic"),
-        "介绍"
+      "/articles/css": autoGetSidebarOptionBySrcDir(
+        path.resolve(__dirname, "../articles/css"),
+        "CSS高级"
       ),
-      "/articles/vue": autoGetSidebarOptionBySrcDir(
-        path.resolve(__dirname, "../articles/vue"),
-        "VUE"
+      "/articles/element": autoGetSidebarOptionBySrcDir(
+        path.resolve(__dirname, "../articles/element"),
+        "Element"
+      ),
+      "/articles/JavaScript": autoGetSidebarOptionBySrcDir(
+        path.resolve(__dirname, "../articles/JavaScript"),
+        "JavaScript"
+      ),
+      "/articles/other": autoGetSidebarOptionBySrcDir(
+        path.resolve(__dirname, "../articles/other")
       ),
       "/articles/react": autoGetSidebarOptionBySrcDir(
         path.resolve(__dirname, "../articles/react"),
         "React"
       ),
-      "/articles/mini": autoGetSidebarOptionBySrcDir(
-        path.resolve(__dirname, "../articles/mini"),
-        "小程序"
+      "/articles/typescript": autoGetSidebarOptionBySrcDir(
+        path.resolve(__dirname, "../articles/typescript"),
+        "TypeScript"
       ),
-      "/articles/electron": autoGetSidebarOptionBySrcDir(
-        path.resolve(__dirname, "../articles/electron"),
-        "electron"
+      "/articles/vitepress": autoGetSidebarOptionBySrcDir(
+        path.resolve(__dirname, "../articles/vitepress"),
+        "VitePress"
       ),
-      "/articles/web3d": autoGetSidebarOptionBySrcDir(
-        path.resolve(__dirname, "../articles/web3d"),
-        "3D"
-      ),
-      "/articles/other": autoGetSidebarOptionBySrcDir(
-        path.resolve(__dirname, "../articles/other/vitepress")
-      ),
-      "/leetcode": autoGetSidebarOptionBySrcDir(
-        path.resolve(__dirname, "../leetcode")
+      "/articles/vue": autoGetSidebarOptionBySrcDir(
+        path.resolve(__dirname, "../articles/vue"),
+        "VUE"
       ),
     },
 
     //社交
     socialLinks: [{ icon: "github", link: "https://github.com/aiai0603" }],
+    footer: {
+      message: 'CSDN只爭朝夕不負韶華',
+      copyright: 'Copyright © 2022-present CSDN'
+    }
   },
 };

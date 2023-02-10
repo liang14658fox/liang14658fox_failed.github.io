@@ -6,13 +6,13 @@ hero:
   name: MicroDocs
   text: Comes from 550W
   tagline: 审美佳，技术强，脾气好，是哪个程序员这么宝藏？
-  # image:
-  #   src: /联合政府移动端_画板 1.png
-  #   alt: logo
+  image:
+    src: /MainPage.jpg
+    alt: logo
   actions:
     - theme: brand
       text: Rush →
-      link: /articles/basic/index
+      link: /articles/other/00.介绍
     # - theme: alt
     #   text: 开源项目
     #   link: /intent/index
@@ -37,4 +37,37 @@ features:
     details: 集成vue项目、项目目录下导入生成、类似于vuepress的tab：：：代码块、网站部署、全局搜索
 ---
 
+<style>
 
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
+}
+</style>
+
+<script setup>
+import { VPTeamPage,  VPTeamPageTitle,  VPTeamMembers } from 'vitepress/theme'
+
+const members = [
+  {
+    avatar: 'https://www.github.com/yyx990803.png',
+    name: '只爭朝夕不負韶華',
+    title: '负责人'
+  }
+]
+</script>
+
+<VPTeamPage>
+  <VPTeamPageTitle>
+    <template #title>
+      前端参与开发人员
+    </template>
+    <template #lead>
+      CSDN
+    </template>
+  </VPTeamPageTitle>
+  <VPTeamMembers
+    size="small"
+    :members="members"
+  />
+</VPTeamPage>
